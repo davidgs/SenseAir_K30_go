@@ -18,7 +18,7 @@ const (
 // Opens a file system handle to the I2C device
 //  and sets the device
 //
-func (device *K30) K30Init(channel string) int {
+func (k30 *K30) K30Init(channel string) int {
 	k30.co2Read = make([]byte, 4)
 	k30.co2Read[0] = 0x22
 	k30.co2Read[1] = 0x00
