@@ -3,6 +3,7 @@ package SenseAir_K30_go
 import (
 	"fmt"
 	"golang.org/x/exp/io/i2c"
+	"time"
 )
 
 type K30 struct {
