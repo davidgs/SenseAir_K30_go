@@ -25,7 +25,6 @@ func (k30 *K30) K30Init(channel string) int {
 	k30.co2Read[1] = 0x00
 	k30.co2Read[2] = 0x08
 	k30.co2Read[3] = 0x2A
-	response := make([]byte, 4)
 	var err error
 	k30.Dev, err = i2c.Open(&i2c.Devfs{Dev: channel}, CO2_ADDR)
 	if err != nil {
@@ -40,8 +39,6 @@ func (k30 *K30) K30Init(channel string) int {
 //
 
 func (k30 *K30) K30ReadValue() int {
-	result := make([]byte, 4)
-
 	err := k30.Dev.Write(k30.co2Read)
 	if err != nil {
 		fmt.Println(err)
